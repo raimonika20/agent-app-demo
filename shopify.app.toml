@@ -1,0 +1,36 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "455f2017a2688402bde4c9b8d93d9f27"
+name = "agent-app-demo"
+handle = "agent-app-demo"
+application_url = "https://job-man-proved-inns.trycloudflare.com"
+embedded = true
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-04"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://job-man-proved-inns.trycloudflare.com/auth/callback",
+  "https://job-man-proved-inns.trycloudflare.com/auth/shopify/callback",
+  "https://job-man-proved-inns.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
