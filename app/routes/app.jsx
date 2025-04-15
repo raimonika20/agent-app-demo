@@ -22,8 +22,9 @@ export default function App() {
         <Link to="/app" rel="home">
           Home
         </Link>
-        <Link to="/app/additional">Additional page</Link>
         <Link to="/app/bundles">Bundle Creator</Link>
+        <Link to="/app/created-bundles">Created Bundles</Link>
+        <Link to="/app/additional">Additional page</Link>
       </NavMenu>
       <Outlet />
     </AppProvider>
